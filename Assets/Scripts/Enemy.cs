@@ -6,7 +6,11 @@ public class Enemy : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speed;
+    private float reset=-9f;
     private Transform playerPos;
+    public float minY;
+    public float maxY;
+    public bool border;
     private void Start()
     {
         playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -19,7 +23,16 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        transform.rotation= new Quaternion(0,0,90,90);
         transform.position+= new Vector3(speed,0,0);
+        if (border ==true && transform.position.y<5)
+        {
+            transform.position=new Vector2(transform.position.x,Mathf.Clamp(transform.position.y,minY,maxY));
+        }
+        if(transform.position.x<=reset&& transform.position.y<4)
+        {
+          Destroy(this.gameObject);
+        }
     }
 
 }
