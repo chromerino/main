@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        transform.rotation= new Quaternion(0,0,90,90);
+        //transform.rotation= new Quaternion(0,0,90,90);
         transform.position+= new Vector3(speed,0,0);
         if (border ==true && transform.position.y<5)
         {
