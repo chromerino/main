@@ -42,7 +42,6 @@ public class Enemy : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             player.Hp--;
-            Debug.Log(player.Hp);
             health--;
             if(health<=0)
             {

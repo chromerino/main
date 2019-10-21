@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 9172052378432472964}
   m_Layer: 0
   m_Name: enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,6 +193,7 @@ MonoBehaviour:
   minY: -2.15
   maxY: 2.15
   border: 1
+  health: 2
 --- !u!114 &9172052378432472964
 MonoBehaviour:
   m_ObjectHideFlags: 0

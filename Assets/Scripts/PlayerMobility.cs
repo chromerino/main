@@ -30,12 +30,6 @@ public class PlayerMobility : MonoBehaviour
         {
             transform.position=new Vector3(Mathf.Clamp(transform.position.x,minX,maxX),Mathf.Clamp(transform.position.y,minY,maxY),transform.position.z);
         }
-        
-        var upperCorner = new Vector2(Screen.width, Screen.height);
-        var rawUC = Camera.main.ScreenToWorldPoint(upperCorner);
-        maxHeight = rawUC.y;
-        var charHeight = GetComponent<Renderer>().bounds.extents.y;
-        maxHeight = rawUC.y - charHeight; 
         if(Hp<=0)
         {
             Destroy(this.gameObject);

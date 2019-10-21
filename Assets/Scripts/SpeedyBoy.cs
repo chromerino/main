@@ -8,7 +8,7 @@ public class SpeedyBoy : MonoBehaviour
     private float resetl = -9f;
     private float resetR = 9f;
     public float bulletSpeed;
-    private PlayerMobility player;
+    public Enemy enemy;
     // Start is called before the first frame update
     void FixedUpdate()
     {
@@ -18,7 +18,6 @@ public class SpeedyBoy : MonoBehaviour
             Destroy(this.gameObject);
         }
         float x = transform.eulerAngles.z;
-        print(x);
         x -= 90;
         x *= Mathf.PI / 180;
         
@@ -29,12 +28,13 @@ public class SpeedyBoy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Enemy"))
         {
-            player.Hp--;
-            Debug.Log(player.Hp);
+            //enemy = other.attachedRigidbody.gameObject;
+            enemy.health--;
             Destroy(this.gameObject);
+            other.attachedRigidbody.gameObject
         }
-    }
+    } 
 
 }
