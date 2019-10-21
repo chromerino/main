@@ -8,6 +8,7 @@ public class SpeedyBoy : MonoBehaviour
     private float resetl = -9f;
     private float resetR = 9f;
     public float bulletSpeed;
+    private PlayerMobility player;
     // Start is called before the first frame update
     void FixedUpdate()
     {
@@ -25,7 +26,15 @@ public class SpeedyBoy : MonoBehaviour
        
 
         transform.position += new Vector3(speed, 0, 0) + rotatedVector;
-    }    
-
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            player.Hp--;
+            Debug.Log(player.Hp);
+            Destroy(this.gameObject);
+        }
+    }
 
 }

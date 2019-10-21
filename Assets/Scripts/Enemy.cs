@@ -11,8 +11,11 @@ public class Enemy : MonoBehaviour
     public float minY;
     public float maxY;
     public bool border;
+    private PlayerMobility player;
+    public int health=2;
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMobility>();
         playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
     /**void update()
@@ -32,6 +35,19 @@ public class Enemy : MonoBehaviour
         if(transform.position.x<=reset&& transform.position.y<4)
         {
           Destroy(this.gameObject);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            player.Hp--;
+            Debug.Log(player.Hp);
+            health--;
+            if(health<=0)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 
