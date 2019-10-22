@@ -33,7 +33,6 @@ public class SpeedyBoy : MonoBehaviour
             //enemy = other.attachedRigidbody.gameObject;
             enemy.health--;
             Destroy(this.gameObject);
-            other.attachedRigidbody.gameObject
         }
     } 
 
