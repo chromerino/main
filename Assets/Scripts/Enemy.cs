@@ -15,7 +15,8 @@ public class Enemy : MonoBehaviour
     public int health=2;
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMobility>();
+        PlayerMobility playerMobility = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMobility>();
+        player = playerMobility;
         playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
     /**void update()
@@ -36,6 +37,10 @@ public class Enemy : MonoBehaviour
         {
           Destroy(this.gameObject);
         }
+        if(health<=0)
+            {
+                Destroy(this.gameObject);
+            }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -43,10 +48,7 @@ public class Enemy : MonoBehaviour
         {
             player.Hp--;
             health--;
-            if(health<=0)
-            {
-                Destroy(this.gameObject);
-            }
+            
         }
     }
 

@@ -9,6 +9,7 @@ public class SpeedyBoy : MonoBehaviour
     private float resetR = 9f;
     public float bulletSpeed;
     public Enemy enemy;
+    public PlayerMobility player;
     // Start is called before the first frame update
     void FixedUpdate()
     {
@@ -30,9 +31,15 @@ public class SpeedyBoy : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            //enemy = other.attachedRigidbody.gameObject;
+            enemy = other.gameObject.GetComponent<Enemy>();
             enemy.health--;
             Destroy(this.gameObject);
+        }
+        else if(other.CompareTag("Player"))
+        {
+           player= other.gameObject.GetComponent<PlayerMobility>();
+            player.Hp--;
+            Destroy(this.gameObject); 
         }
     } 
 

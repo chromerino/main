@@ -20,10 +20,10 @@ public class Skills : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /**private void OnCollisionEnter2D(Collision2D collision)
     {        
             reduceHp();
-    }
+    }**/
     private void reduceHp()
     {
         Hp -= 1;
