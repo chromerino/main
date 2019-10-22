@@ -19,15 +19,10 @@ public class Enemy : MonoBehaviour
         player = playerMobility;
         playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
-    /**void update()
-
-    {
-        transform.position = Vector2.MoveTowards(transform.position, playerPos.position ,speed * Time.deltaTime);
-    }**/
+ 
 
     void Update()
     {
-        //transform.rotation= new Quaternion(0,0,90,90);
         transform.position+= new Vector3(speed,0,0);
         if (border ==true && transform.position.y<5)
         {

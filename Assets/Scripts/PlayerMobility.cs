@@ -11,11 +11,18 @@ public class PlayerMobility : MonoBehaviour
     public float maxY;
     public int Hp=5;
     
+    private double timeStamp=0;
+    public double coolDownPeriodInSeconds; 
     private float maxHeight;
  
     private void FixedUpdate()
     {
-        
+           
+     if (timeStamp <= Time.time)
+     {
+     //frei();
+     timeStamp = Time.time + coolDownPeriodInSeconds;
+     }
         float runSpeed = 4f;
         float moveH = Input.GetAxis("Horizontal");
         float moveV = Input.GetAxis("Vertical");

@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -0.02
-  bulletSpeed: 0.05
+  bulletSpeed: 0.08
   enemy: {fileID: 0}
   player: {fileID: 0}
 --- !u!61 &-301741213862318254

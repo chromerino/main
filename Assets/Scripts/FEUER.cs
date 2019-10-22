@@ -6,13 +6,20 @@ public class FEUER : MonoBehaviour
 {
     public GameObject BulletPrefab;
     public Transform Bulletboy;
-    
+     private double timeStamp=0;
+    public double coolDownPeriodInSeconds;
     // Update is called once per frame
     void FixedUpdate()
     {
         if(Input.GetButtonDown("Rammstein"))
         {
-            frei();  
+               
+     if (timeStamp <= Time.time)
+     {
+     frei();
+     timeStamp = Time.time + coolDownPeriodInSeconds;
+     }
+             
         }
         
     }
