@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 8626771437995973461}
   - component: {fileID: 8626771437995973458}
   - component: {fileID: 8626771437995973459}
-  - component: {fileID: 9172052378432472964}
   - component: {fileID: 9058380075272539122}
   m_Layer: 0
   m_Name: enemy
@@ -81,6 +80,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -180,18 +180,6 @@ MonoBehaviour:
   maxY: 2.15
   border: 1
   health: 2
---- !u!114 &9172052378432472964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8626771437995973456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e39804a318355c46a64cc634942a45f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &9058380075272539122
 MonoBehaviour:
   m_ObjectHideFlags: 0
