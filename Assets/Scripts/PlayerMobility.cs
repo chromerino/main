@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMobility : MonoBehaviour
 {
@@ -39,6 +40,8 @@ public class PlayerMobility : MonoBehaviour
         }
         if(Hp<=0)
         {
+		    
+			SceneManager.LoadScene("GameOverMenu");
             Destroy(this.gameObject);
         }
     }

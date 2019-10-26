@@ -43,6 +43,7 @@ public class Enemy : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+		    player= other.gameObject.GetComponent<PlayerMobility>();
             player.Hp--;
             health--;
             
