@@ -15,9 +15,11 @@ public class Enemy : MonoBehaviour
     public int health=2;
     private void Start()
     {
+	/*
         PlayerMobility playerMobility = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMobility>();
         player = playerMobility;
-        playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+		*/
     }
  
 
