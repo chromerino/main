@@ -36,6 +36,7 @@ public class Enemy : MonoBehaviour
         }
         if(health<=0)
             {
+			    GameObject.Find("CurrencyText").GetComponent<Currency>().increment();
                 Destroy(this.gameObject);
             }
     }

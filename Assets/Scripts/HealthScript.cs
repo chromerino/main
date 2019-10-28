@@ -6,6 +6,7 @@ public class HealthScript : MonoBehaviour
 {
     // Start is called before the first frame update
 	public GameObject[] Hearts;
+	public GameObject[] UIHighlights;
 	public GameObject player;
 	public Sprite HealthSprite;
 	public Sprite DeadSprite;
@@ -14,7 +15,25 @@ public class HealthScript : MonoBehaviour
 	public int CurrentHealth;
 
 	void Start(){
-	MaxHealth=5;
+	for(int i=0; i<UIHighlights.Length; i++){
+		UIHighlights[i].GetComponent<Renderer>().enabled = false;
+	}
+	if(MaxHealth<=3){
+	UIHighlights[0].GetComponent<Renderer>().enabled = true;
+	}
+	else if(MaxHealth==4){
+	UIHighlights[1].GetComponent<Renderer>().enabled = true;
+	}
+	else if(MaxHealth==5){
+	UIHighlights[2].GetComponent<Renderer>().enabled = true;
+	}
+	else if(MaxHealth==4){
+	UIHighlights[3].GetComponent<Renderer>().enabled = true;
+	}
+	if(6<MaxHealth){
+	MaxHealth=6;
+    }
+	CurrentHealth=MaxHealth;
 	for(int i=MaxHealth; i<6; i++){
 	Hearts[i].GetComponent<Renderer>().enabled = false;
 	}
