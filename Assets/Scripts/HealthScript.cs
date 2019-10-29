@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class HealthScript : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -10,32 +10,32 @@ public class HealthScript : MonoBehaviour
 	public GameObject player;
 	public Sprite HealthSprite;
 	public Sprite DeadSprite;
-	private SpriteRenderer sr;
+	private Image sr;
     public int MaxHealth;
 	public int CurrentHealth;
 
 	void Start(){
 	for(int i=0; i<UIHighlights.Length; i++){
-		UIHighlights[i].GetComponent<Renderer>().enabled = false;
+		UIHighlights[i].SetActive(false);
 	}
 	if(MaxHealth<=3){
-	UIHighlights[0].GetComponent<Renderer>().enabled = true;
+	UIHighlights[0].SetActive(true);
 	}
 	else if(MaxHealth==4){
-	UIHighlights[1].GetComponent<Renderer>().enabled = true;
+	UIHighlights[1].SetActive(true);
 	}
 	else if(MaxHealth==5){
-	UIHighlights[2].GetComponent<Renderer>().enabled = true;
+	UIHighlights[2].SetActive(true);
 	}
 	else if(MaxHealth==4){
-	UIHighlights[3].GetComponent<Renderer>().enabled = true;
+	UIHighlights[3].SetActive(true);
 	}
 	if(6<MaxHealth){
 	MaxHealth=6;
     }
 	CurrentHealth=MaxHealth;
 	for(int i=MaxHealth; i<6; i++){
-	Hearts[i].GetComponent<Renderer>().enabled = false;
+	Hearts[i].SetActive(false);
 	}
 	}
 
@@ -63,12 +63,12 @@ death(i);
 
 
 public void life(int i) {
-    sr=Hearts[i].GetComponent<SpriteRenderer>();
+    sr=Hearts[i].GetComponent<Image>();
 	sr.sprite = HealthSprite;
 }
     
 public void death(int i) {
-    sr=Hearts[i].GetComponent<SpriteRenderer>();
+    sr=Hearts[i].GetComponent<Image>();
 	sr.sprite = DeadSprite;
 }
 
