@@ -754,7 +754,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 672461731}
-  - component: {fileID: 672461730}
   - component: {fileID: 672461729}
   m_Layer: 0
   m_Name: itemspawner
@@ -789,29 +788,6 @@ MonoBehaviour:
   - {fileID: 3174315439386749063, guid: 70eca666500f13041a0318a9eb4417b0, type: 3}
   - {fileID: 6858218212651317662, guid: 379a16d321b33cd4e9e3cde5924def95, type: 3}
   - {fileID: 6829918517038558083, guid: b9cbf5010bff49940816b57de7301503, type: 3}
-  startTimeBtwSpawns: 15
---- !u!114 &672461730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 672461728}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8147aa0c89706dd4f8429a8eea4455fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 8626771437995973456, guid: 6e2cfa0edccea954db1d2e80324abf45, type: 3}
-  spawnSpots:
-  - {fileID: 179329152}
-  - {fileID: 15101239}
-  - {fileID: 1968747636}
-  - {fileID: 946347027}
-  - {fileID: 2133949776}
-  - {fileID: 1128411265}
-  - {fileID: 343336717}
-  - {fileID: 752863217}
   startTimeBtwSpawns: 15
 --- !u!4 &672461731
 Transform:
@@ -1979,6 +1955,9 @@ MonoBehaviour:
   maxY: 2.15
   Hp: 5
   coolDownPeriodInSeconds: 0
+  invincible: 0
+  burstfire: 0
+  reduction: 0
 --- !u!61 &1629090314
 BoxCollider2D:
   m_ObjectHideFlags: 0

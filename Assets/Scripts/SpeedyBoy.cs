@@ -38,7 +38,10 @@ public class SpeedyBoy : MonoBehaviour
         else if(other.CompareTag("Player"))
         {
            player= other.gameObject.GetComponent<PlayerMobility>();
+           if(player.invincible==false)
+           {
             player.Hp--;
+           }
             Destroy(this.gameObject); 
         }
     } 

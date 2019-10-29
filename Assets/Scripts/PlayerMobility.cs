@@ -15,14 +15,18 @@ public class PlayerMobility : MonoBehaviour
     private double timeStamp=0;
     public double coolDownPeriodInSeconds; 
     private float maxHeight;
+    public bool invincible=false;
+    public bool burstfire=false;
+    public bool reduction=false;
  
     private void FixedUpdate()
     {
            
      if (timeStamp <= Time.time)
      {
-     //frei();
-     timeStamp = Time.time + coolDownPeriodInSeconds;
+       reduction=false;
+       burstfire=false;
+       invincible=false;
      }
         float runSpeed = 4f;
         float moveH = Input.GetAxis("Horizontal");
@@ -40,12 +44,35 @@ public class PlayerMobility : MonoBehaviour
         }
         if(Hp<=0)
         {
-		    
-			SceneManager.LoadScene("GameOverMenu");
+            SceneManager.LoadScene("GameOverMenu");
             Destroy(this.gameObject);
         }
+        
     }
-
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("CDR reduction"))
+        {
+            timeStamp = Time.time + 5;
+            reduction=true;
+            Destroy(other.gameObject);
+           
+        } else if(other.CompareTag("Burstfire"))
+        {
+            timeStamp = Time.time + 5;
+            burstfire=true;
+            Destroy(other.gameObject);
+        } else if(other.CompareTag("Invincibility"))
+        {
+            timeStamp = Time.time + 5;
+             invincible=true;
+             Destroy(other.gameObject);
+        }else if(other.CompareTag("RepairItem"))
+        {
+            Hp++;
+            Destroy(other.gameObject);
+        }
+    }
     
 }
 

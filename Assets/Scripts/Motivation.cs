@@ -23,7 +23,7 @@ private double timeStamp=0;
 
     public void motivate(){
 	
-	int randPos = Random.Range(0, Motivations.Length-1);
+	int randPos = Random.Range(0, Motivations.Length);
 	GetComponent<UnityEngine.UI.Text>().text = Motivations[randPos];
 	timeStamp = Time.time + 2;
 	}
