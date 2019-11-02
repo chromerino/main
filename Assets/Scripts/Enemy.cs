@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float speed;
+    public static float speed=  -0.02f;
     private float reset=-9f;
     private Transform playerPos;
     public float minY;
@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour
         if(health<=0)
             {
 			    GameObject.Find("CurrencyText").GetComponent<Currency>().increment();
+				GameObject.Find("GameControll").GetComponent<GameControllScript>().addKill();
                 Destroy(this.gameObject);
             }
     }

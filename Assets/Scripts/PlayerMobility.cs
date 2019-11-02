@@ -44,8 +44,9 @@ public class PlayerMobility : MonoBehaviour
         }
         if(Hp<=0)
         {
+		    GameObject.Find("GameControll").GetComponent<GameControllScript>().end();
             SceneManager.LoadScene("GameOverMenu");
-            Destroy(this.gameObject);
+            
         }
         
     }
@@ -55,21 +56,25 @@ public class PlayerMobility : MonoBehaviour
         {
             timeStamp = Time.time + 5;
             reduction=true;
+			GameObject.Find("GameControll").GetComponent<GameControllScript>().addItem();
             Destroy(other.gameObject);
            
         } else if(other.CompareTag("Burstfire"))
         {
             timeStamp = Time.time + 5;
             burstfire=true;
+			GameObject.Find("GameControll").GetComponent<GameControllScript>().addItem();
             Destroy(other.gameObject);
         } else if(other.CompareTag("Invincibility"))
         {
             timeStamp = Time.time + 5;
              invincible=true;
+			 GameObject.Find("GameControll").GetComponent<GameControllScript>().addItem();
              Destroy(other.gameObject);
         }else if(other.CompareTag("RepairItem"))
         {
             Hp++;
+			GameObject.Find("GameControll").GetComponent<GameControllScript>().addItem();
             Destroy(other.gameObject);
         }
     }
