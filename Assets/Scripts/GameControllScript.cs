@@ -84,7 +84,7 @@ public static int ShopWeaponCooldownReductionLevel=0;
 		PlayerMobility.runSpeed=(float)4+4*lMult;
 		FeuerEnemy.CooldownReduction=lMult;
 		SpeedyBoy.speed= (float)0.08f+(0.08f*lMult);
-		Spawner.startTimeBtwSpawns=(float) 2-2*lMult;
+		Spawner.startTimeBtwSpawns=(float) 4-4*lMult;
 
 		SpeedyBoy.speed= speed;
 	    ScrollingBackground.speed= speed;

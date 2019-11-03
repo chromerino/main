@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
     public GameObject [] enemies;
     public Transform[] spawnSpots;
     private float timeBtwSpawns;
-        public static float startTimeBtwSpawns=2;
+        public static float startTimeBtwSpawns=4;
     private void Start()
     {
         timeBtwSpawns = startTimeBtwSpawns;
