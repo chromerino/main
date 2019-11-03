@@ -13,12 +13,12 @@ public class PlayerMobility : MonoBehaviour
     public int Hp=5;
     
     private double timeStamp=0;
-    public double coolDownPeriodInSeconds; 
+    public static double coolDownPeriodInSeconds=1; 
     private float maxHeight;
     public bool invincible=false;
     public bool burstfire=false;
     public bool reduction=false;
- 
+ public static float runSpeed = 4f;
     private void FixedUpdate()
     {
            
@@ -28,7 +28,7 @@ public class PlayerMobility : MonoBehaviour
        burstfire=false;
        invincible=false;
      }
-        float runSpeed = 4f;
+        
         float moveH = Input.GetAxis("Horizontal");
         float moveV = Input.GetAxis("Vertical");
 

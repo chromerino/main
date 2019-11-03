@@ -10,7 +10,7 @@ public class FEUER : MonoBehaviour
      private double burstStamp=0;
      private double burstStamp2=0;
      private bool ShotsFired=false;
-    public double coolDownPeriodInSeconds;
+    public static double coolDownPeriodInSeconds=1;
     // Update is called once per frame
     void FixedUpdate()
     {        
@@ -36,8 +36,8 @@ public class FEUER : MonoBehaviour
      timeStamp = Time.time + coolDownPeriodInSeconds;
      if(GameObject.Find("Player").GetComponent<PlayerMobility>().burstfire==true)
      {
-        burstStamp=Time.time+0.1;
-        burstStamp2=Time.time+0.2;
+        burstStamp=Time.time+0.1*coolDownPeriodInSeconds;
+        burstStamp2=Time.time+0.2*coolDownPeriodInSeconds;
         ShotsFired=false;
      }
      

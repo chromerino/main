@@ -8,6 +8,7 @@ public class FeuerEnemy : MonoBehaviour
     public Transform Bulletboy;
     private double timeStamp=0;
     public double coolDownPeriodInSeconds;
+	public static double CooldownReduction=0;
     
     // Update is called once per frame
     void Update()
@@ -16,7 +17,7 @@ public class FeuerEnemy : MonoBehaviour
      if (timeStamp <= Time.time)
      {
      frei();
-     timeStamp = Time.time + coolDownPeriodInSeconds;
+     timeStamp = Time.time + coolDownPeriodInSeconds-(coolDownPeriodInSeconds*CooldownReduction);
      }
     
     }

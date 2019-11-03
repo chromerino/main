@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class scrollingItem : MonoBehaviour
 {
-    public float speed;
+    public static float speed=-0.02f;
     private float reset=-9f;
     // Start is called before the first frame update
     void Start()

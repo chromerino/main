@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class SpeedyBoy : MonoBehaviour
 {
-    public float speed;
+    public static float speed=-0.02f;
     private float resetl = -9f;
     private float resetR = 9f;
-    public float bulletSpeed;
+    public static float bulletSpeed=0.08f;
     public Enemy enemy;
     public PlayerMobility player;
+	public int Damage;
     // Start is called before the first frame update
     void FixedUpdate()
     {
@@ -40,7 +41,7 @@ public class SpeedyBoy : MonoBehaviour
            player= other.gameObject.GetComponent<PlayerMobility>();
            if(player.invincible==false)
            {
-            player.Hp--;
+            player.Hp-=Damage;
            }
             Destroy(this.gameObject); 
         }

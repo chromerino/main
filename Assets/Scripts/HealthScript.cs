@@ -11,7 +11,7 @@ public class HealthScript : MonoBehaviour
 	public Sprite HealthSprite;
 	public Sprite DeadSprite;
 	private Image sr;
-    public int MaxHealth;
+    public static int MaxHealth=3;
 	public bool fullHealed=true;
 	public int CurrentHealth;
 
@@ -47,6 +47,7 @@ if(CurrentHealth<0){
 }
 if(CurrentHealth>=MaxHealth){
 	CurrentHealth=MaxHealth;
+	CurrentHealth=player.GetComponent<PlayerMobility>().Hp=MaxHealth;
 	fullHealed=true;
 }else{
 	fullHealed=false;

@@ -8,7 +8,7 @@ public class itemspawner : MonoBehaviour
     public Transform[] spawnSpots;
     public GameObject[] items;
     private float timeBtwSpawns;
-        public float startTimeBtwSpawns;
+        public static float startTimeBtwSpawns=15;
     private void Start()
     {
         timeBtwSpawns = startTimeBtwSpawns;
