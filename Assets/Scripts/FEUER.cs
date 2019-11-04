@@ -12,7 +12,7 @@ public class FEUER : MonoBehaviour
      private bool ShotsFired=false;
     public static double coolDownPeriodInSeconds=1;
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {        
         if(GameObject.Find("Player").GetComponent<PlayerMobility>().burstfire==true)
      {
