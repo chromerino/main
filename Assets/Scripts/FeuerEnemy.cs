@@ -10,7 +10,7 @@ public class FeuerEnemy : MonoBehaviour
     public double coolDownPeriodInSeconds;
     
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {                
         
      if (timeStamp <= Time.time)

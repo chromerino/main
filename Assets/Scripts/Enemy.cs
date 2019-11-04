@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     }
  
 
-    void Update()
+    void FixedUpdate()
     {
         transform.position+= new Vector3(speed,0,0);
         if (border ==true && transform.position.y<5)

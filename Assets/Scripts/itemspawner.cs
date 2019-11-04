@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class itemspawner : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject enemy;
     public Transform[] spawnSpots;
+    public GameObject[] items;
     private float timeBtwSpawns;
-        public float startTimeBtwSpawns;
+        public static float startTimeBtwSpawns=15;
     private void Start()
     {
         timeBtwSpawns = startTimeBtwSpawns;
@@ -17,8 +17,9 @@ public class Spawner : MonoBehaviour
     {
         if(timeBtwSpawns <= 0)
         {
-            int randPos = Random.Range(0, spawnSpots.Length-1);
-            Instantiate(enemy, spawnSpots[randPos].position, spawnSpots[randPos].rotation);
+            int randPos = Random.Range(0, spawnSpots.Length);
+            int randPos2= Random.Range(0, items.Length) ;
+            Instantiate(items[randPos2], spawnSpots[randPos].position, spawnSpots[randPos].rotation);
             timeBtwSpawns = startTimeBtwSpawns;
         }
         else
