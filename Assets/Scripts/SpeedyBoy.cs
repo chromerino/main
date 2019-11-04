@@ -7,7 +7,7 @@ public class SpeedyBoy : MonoBehaviour
     public static float speed=-0.02f;
     private float resetl = -9f;
     private float resetR = 9f;
-    public static float bulletSpeed=0.08f;
+    public static float bulletSpeed=0.1f;
     public Enemy enemy;
     public PlayerMobility player;
 	public int Damage;

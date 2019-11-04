@@ -127,9 +127,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490d83017bfddce458798cace2cd1969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateSpeed: 3
   minY: -2.15
   maxY: 2.15
-  border: 0
+  border: 1
   health: 1
 --- !u!50 &5348255768594564704
 Rigidbody2D:
@@ -193,4 +194,4 @@ MonoBehaviour:
   BulletPrefab: {fileID: 350325896082315627, guid: 919f1ad9b790a6b4fa8a9f2bcfb091d2,
     type: 3}
   Bulletboy: {fileID: 1860694894520166256}
-  coolDownPeriodInSeconds: 1.2
+  coolDownPeriodInSeconds: 1.8

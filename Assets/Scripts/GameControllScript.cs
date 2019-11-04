@@ -13,13 +13,26 @@ private double timeStampLateGame=0;
 
 
 public static int ShopWeaponCooldownReductionLevel=0;
-    
+
 
     // Start is called before the first frame update
-    
 
+    private void Start()
+    {
+        FEUER.coolDownPeriodInSeconds = (float)(1 - (0.1 * ShopWeaponCooldownReductionLevel));// - lMult;
+        itemspawner.startTimeBtwSpawns = (float)15;//- 15 * lMult;
+        PlayerMobility.runSpeed = (float)4;//+ 4 * lMult;
+        FeuerEnemy.CooldownReduction = 1;//lMult;
+        SpeedyBoy.speed = (float)0.1f; //+ (0.1f * lMult);
+        Spawner.startTimeBtwSpawns = (float)4; //- 4 * lMult;
+
+        SpeedyBoy.speed = -0.02f;
+        ScrollingBackground.speed =  - 0.02f;
+        scrollingItem.speed = -0.02f;
+        Enemy.speed = -0.02f;
+    }
     // Update is called once per frame
-    void Update(){
+    void FixedUpdate(){
 	if(GameObject.Find("HealthUI").GetComponent<HealthScript>().fullHealed==true){
 	mult=3;
 	}else{
@@ -83,13 +96,14 @@ public static int ShopWeaponCooldownReductionLevel=0;
 		itemspawner.startTimeBtwSpawns=(float)15-15*lMult;
 		PlayerMobility.runSpeed=(float)4+4*lMult;
 		FeuerEnemy.CooldownReduction=lMult;
-		SpeedyBoy.speed= (float)0.08f+(0.08f*lMult);
+		SpeedyBoy.speed= (float)0.1f+(0.1f*lMult);
 		Spawner.startTimeBtwSpawns=(float) 4-4*lMult;
 
 		SpeedyBoy.speed= speed;
 	    ScrollingBackground.speed= speed;
 		scrollingItem.speed= speed;
 		Enemy.speed= speed;
+
 	}
 
 }
