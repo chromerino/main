@@ -12,7 +12,7 @@ public class Currency : MonoBehaviour
 		Kills=0;
 	}
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         GetComponent<UnityEngine.UI.Text>().text = Score+"";
     }

@@ -11,7 +11,7 @@ public class FeuerEnemy : MonoBehaviour
 	public static double CooldownReduction=0;
     
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {                
         
      if (timeStamp <= Time.time)

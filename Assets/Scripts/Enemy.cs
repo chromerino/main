@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
     }
  
 
-    void Update()
+    void FixedUpdate()
     {
         transform.position+= new Vector3(speed,0,0);
         playerPos = GameObject.Find("Player").transform;

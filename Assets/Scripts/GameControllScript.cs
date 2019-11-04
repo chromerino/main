@@ -10,6 +10,7 @@ private int mult=1;
 private int Score=0;
 private double lategameMult;
 private double timeStampLateGame=0;
+    private double StartTime;
 
 
 public static int ShopWeaponCooldownReductionLevel=0;
@@ -30,6 +31,8 @@ public static int ShopWeaponCooldownReductionLevel=0;
         ScrollingBackground.speed =  - 0.02f;
         scrollingItem.speed = -0.02f;
         Enemy.speed = -0.02f;
+        StartTime = Time.time;
+        lategameMult = 0;
     }
     // Update is called once per frame
     void FixedUpdate(){
@@ -51,13 +54,14 @@ public static int ShopWeaponCooldownReductionLevel=0;
 		if (timeStampLateGame <= Time.time)
      {
 	  
-	   lategameMult=0.70-(7/(10+(Time.time)));
+	   lategameMult=0.70-(7/(10+((Time.time-StartTime)/5)));
 	   Debug.Log(lategameMult);
 	  
 	   increment();
        timeStampLateGame+=1;
 
      }
+
 
     }
 

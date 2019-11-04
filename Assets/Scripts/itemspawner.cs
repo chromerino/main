@@ -13,7 +13,7 @@ public class itemspawner : MonoBehaviour
     {
         timeBtwSpawns = startTimeBtwSpawns;
     }
-    void Update()
+    void FixedUpdate()
     {
         if(timeBtwSpawns <= 0)
         {

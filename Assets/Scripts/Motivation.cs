@@ -27,7 +27,7 @@ private double timeStamp=0;
 	GetComponent<UnityEngine.UI.Text>().text = Motivations[randPos];
 	timeStamp = Time.time + 2;
 	}
-	void Update(){
+	void FixedUpdate(){
 		if (timeStamp <= Time.time)
      {
      GetComponent<UnityEngine.UI.Text>().text = "";

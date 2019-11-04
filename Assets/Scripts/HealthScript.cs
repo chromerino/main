@@ -40,7 +40,7 @@ public class HealthScript : MonoBehaviour
 	}
 	}
 
-void Update(){
+void FixedUpdate(){
 CurrentHealth=player.GetComponent<PlayerMobility>().Hp;
 if(CurrentHealth<0){
 	CurrentHealth=0;

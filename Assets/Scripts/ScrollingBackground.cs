@@ -5,7 +5,7 @@ public class ScrollingBackground : MonoBehaviour
     private float reset=-20.325f;
     private float StartPoint=20.325f;
     public static float speed=-0.02f;
-    void Update()
+    void FixedUpdate()
     {
         if(reset>transform.position.x)
         {
