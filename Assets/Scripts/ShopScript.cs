@@ -26,7 +26,7 @@ public Sprite cannots;
     // Start is called before the first frame update
     void Start()
     { 
-	PlayerPrefs.SetInt("Currency", 700);
+	
 	updateShop();
 	}
 

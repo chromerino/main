@@ -23,7 +23,7 @@ public static int ItemDurationLevel=0;
     private void Start()
     {
 	
-	PlayerPrefs.DeleteAll();
+	
 	    ShopWeaponCooldownReductionLevel=PlayerPrefs.GetInt("FiringRateReductionLvl", 0);
         ShopItemSpawnCooldownReductionLevel=PlayerPrefs.GetInt("ItemSpawnRateReductionLvl", 0);
 		ItemDurationLevel=PlayerPrefs.GetInt("ItemDurationIncreasementLvl", 0);
