@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
     public bool border;
     private PlayerMobility player;
     public int health=2;
+	public bool tank;
+	public static float drivingSpeed=-0.02f;
     
     
     
@@ -30,11 +32,23 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(tank==true){
+		float x = transform.eulerAngles.z;
+        x -= 90;
+        x *= Mathf.PI / 180;
+        
+        var rotatedVector = drivingSpeed * new Vector3(Mathf.Cos(x), Mathf.Sin(x), 0);
+       
+
+        transform.position += new Vector3(speed, 0, 0) + rotatedVector;
+		}else{
         transform.position+= new Vector3(speed,0,0);
+		}
         playerPos = GameObject.Find("Player").transform;
         Vector2 direction = playerPos.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        if((angle + 270) % 360>=210)
+       if(tank==true){
+		if((angle + 270) % 360>=210)
         {
             angle = 360 - (angle + 270) % 360;
         }
@@ -45,6 +59,10 @@ public class Enemy : MonoBehaviour
         
         Quaternion rotation = Quaternion.AngleAxis(Mathf.Clamp(angle,30,150), Vector3.forward);
         transform.rotation= Quaternion.Slerp(transform.rotation,rotation,rotateSpeed * Time.deltaTime);
+		}else{
+		 Quaternion rotation = Quaternion.AngleAxis(angle+270, Vector3.forward);
+        transform.rotation= Quaternion.Slerp(transform.rotation,rotation,rotateSpeed * Time.deltaTime);
+		}
         if (border ==true && transform.position.y<5)
         {
             transform.position=new Vector2(transform.position.x,Mathf.Clamp(transform.position.y,minY,maxY));

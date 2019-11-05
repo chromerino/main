@@ -14,12 +14,21 @@ private double timeStampLateGame=0;
 
 
 public static int ShopWeaponCooldownReductionLevel=0;
+public static int ShopItemSpawnCooldownReductionLevel=0;
+public static int ItemDurationLevel=0;
 
 
     // Start is called before the first frame update
 
     private void Start()
     {
+	
+	PlayerPrefs.DeleteAll();
+	    ShopWeaponCooldownReductionLevel=PlayerPrefs.GetInt("FiringRateReductionLvl", 0);
+        ShopItemSpawnCooldownReductionLevel=PlayerPrefs.GetInt("ItemSpawnRateReductionLvl", 0);
+		ItemDurationLevel=PlayerPrefs.GetInt("ItemDurationIncreasementLvl", 0);
+		PlayerMobility.ItemDuration=5+ItemDurationLevel;
+
         FEUER.coolDownPeriodInSeconds = (float)(1 - (0.1 * ShopWeaponCooldownReductionLevel));// - lMult;
         itemspawner.startTimeBtwSpawns = (float)15;//- 15 * lMult;
         PlayerMobility.runSpeed = (float)4;//+ 4 * lMult;
@@ -33,6 +42,7 @@ public static int ShopWeaponCooldownReductionLevel=0;
         Enemy.speed = -0.02f;
         StartTime = Time.time;
         lategameMult = 0;
+		Enemy.drivingSpeed=- 0.02f;
     }
     // Update is called once per frame
     void FixedUpdate(){
@@ -97,7 +107,7 @@ public static int ShopWeaponCooldownReductionLevel=0;
             
 		
 		FEUER.coolDownPeriodInSeconds=(float)(1-(0.1*ShopWeaponCooldownReductionLevel))-lMult;
-		itemspawner.startTimeBtwSpawns=(float)15-15*lMult;
+		itemspawner.startTimeBtwSpawns=(float)(15-ShopItemSpawnCooldownReductionLevel*2)-(15-ShopItemSpawnCooldownReductionLevel*2)*lMult;
 		PlayerMobility.runSpeed=(float)4+4*lMult;
 		FeuerEnemy.CooldownReduction=lMult;
 		SpeedyBoy.speed= (float)0.1f+(0.1f*lMult);
@@ -107,6 +117,7 @@ public static int ShopWeaponCooldownReductionLevel=0;
 	    ScrollingBackground.speed= speed;
 		scrollingItem.speed= speed;
 		Enemy.speed= speed;
+		Enemy.drivingSpeed=speed;
 
 	}
 

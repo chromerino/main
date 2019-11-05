@@ -18,6 +18,7 @@ public class PlayerMobility : MonoBehaviour
     public bool invincible=false;
     public bool burstfire=false;
     public bool reduction=false;
+	public static double ItemDuration=5;
  public static float runSpeed = 4f;
     private void FixedUpdate()
     {
@@ -54,20 +55,20 @@ public class PlayerMobility : MonoBehaviour
     {
         if (other.CompareTag("CDR reduction"))
         {
-            timeStamp = Time.time + 5;
+            timeStamp = Time.time + ItemDuration;
             reduction=true;
 			GameObject.Find("GameControll").GetComponent<GameControllScript>().addItem();
             Destroy(other.gameObject);
            
         } else if(other.CompareTag("Burstfire"))
         {
-            timeStamp = Time.time + 5;
+            timeStamp = Time.time + ItemDuration;
             burstfire=true;
 			GameObject.Find("GameControll").GetComponent<GameControllScript>().addItem();
             Destroy(other.gameObject);
         } else if(other.CompareTag("Invincibility"))
         {
-            timeStamp = Time.time + 5;
+            timeStamp = Time.time + ItemDuration;
              invincible=true;
 			 GameObject.Find("GameControll").GetComponent<GameControllScript>().addItem();
              Destroy(other.gameObject);

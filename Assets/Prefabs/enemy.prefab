@@ -179,6 +179,7 @@ MonoBehaviour:
   maxY: 2.15
   border: 1
   health: 2
+  tank: 1
 --- !u!114 &9058380075272539122
 MonoBehaviour:
   m_ObjectHideFlags: 0

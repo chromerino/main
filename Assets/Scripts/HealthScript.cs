@@ -13,9 +13,10 @@ public class HealthScript : MonoBehaviour
 	private Image sr;
     public static int MaxHealth=3;
 	public bool fullHealed=true;
-	public int CurrentHealth;
+	public int CurrentHealth=6;
 
 	void Start(){
+	MaxHealth=PlayerPrefs.GetInt("MaxHealth", 3);
 	for(int i=0; i<UIHighlights.Length; i++){
 		UIHighlights[i].SetActive(false);
 	}
@@ -28,7 +29,7 @@ public class HealthScript : MonoBehaviour
 	else if(MaxHealth==5){
 	UIHighlights[2].SetActive(true);
 	}
-	else if(MaxHealth==4){
+	else if(MaxHealth==6){
 	UIHighlights[3].SetActive(true);
 	}
 	if(6<MaxHealth){
