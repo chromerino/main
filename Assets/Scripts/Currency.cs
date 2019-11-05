@@ -5,11 +5,12 @@ using UnityEngine;
 public class Currency : MonoBehaviour
 {
     // Start is called before the first frame update
-	public int Score;
+	public static int Score=0;
 	int Kills;
     
 	void Start(){
 		Kills=0;
+		Score=PlayerPrefs.GetInt("Currency", 0);
 	}
     // Update is called once per frame
     void FixedUpdate()

@@ -8,7 +8,7 @@ public class Credits : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        time=Time.time+30;
+        time=Time.time+32;
     }
 
     // Update is called once per frame

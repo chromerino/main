@@ -150,7 +150,7 @@ public Sprite cannots;
 		GameObject.Find("CostsImage1").SetActive(false);
 		}
 		
-		
+		GameObject.Find("CurrencyCounter").GetComponent<UnityEngine.UI.Text>().text = ""+ Currency;
 		
    
    

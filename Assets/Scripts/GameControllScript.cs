@@ -44,6 +44,7 @@ public static int ItemDurationLevel=0;
         lategameMult = 0;
 		Enemy.drivingSpeed=- 0.02f;
     }
+	
     // Update is called once per frame
     void FixedUpdate(){
 	if(GameObject.Find("HealthUI").GetComponent<HealthScript>().fullHealed==true){
@@ -95,7 +96,9 @@ public static int ItemDurationLevel=0;
 
 	public void end(){
 		lastScore=Score;
-
+		PlayerPrefs.SetInt("Currency", Currency.Score);
+		
+  
 	}
 
 		public void increment()
